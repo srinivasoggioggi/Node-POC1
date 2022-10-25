@@ -3,23 +3,28 @@ FROM node:12-alpine
 RUN apk add --no-cache python2 g++ make
 WORKDIR /app
 COPY . .
-RUN yarn install --production
-CMD ["node", "src/index.js"]
+RUN cd app && yarn install --production
+CMD ["node", "app/src/index.js"]
 EXPOSE 3000
+
 
 
 ################## Build and run##############################
 
 # docker build -t todo-nodejs .
 # docker run --name todonodejs -d -p 8443:3000 todo-nodejs
-# http://localhost:8443
+# http://localhost:3000
 
 ############## Push Docker image ############################
-# docker push docker/getting-started
+# docker login hub.docker.com
+# docker login   //ID &  PW 
+# docker logout 
+# docker tag todo-nodejs srinivasoggi/todo-nodejs
+# docker push srinivasoggi/todo-nodejs
 
 ################### Info ################################
 
-# FROM--------- to publl base image 
+# FROM--------- to pull base image 
 # WORKDIR------ to sets the working directory 
 # RUN ------ ---to execute command
 # COPY ---------to copy directory from your local machine to the dockker container 
