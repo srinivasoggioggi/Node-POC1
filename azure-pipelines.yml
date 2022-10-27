@@ -9,6 +9,9 @@ trigger:
 pool:
   vmImage: windows-2019
 
+steps:
+
+
 - task: AzureCLI@2
   inputs:
     azureSubscription: 'Visual Studio Enterprise Subscription – MPN(6343f0c0-472d-4266-af28-044c40155b85)'
