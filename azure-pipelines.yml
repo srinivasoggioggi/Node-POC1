@@ -14,6 +14,7 @@ steps:
   displayName: 'Run a one-line script'
 - task: AzureCLI@2
   inputs:
+    azureSubscription: 'Visual Studio Enterprise Subscription – MPN(6343f0c0-472d-4266-af28-044c40155b85)'
     scriptType: 'ps'
     scriptLocation: 'inlineScript'
     inlineScript: 'Get-AzResourcegroup'
