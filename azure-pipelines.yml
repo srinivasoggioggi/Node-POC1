@@ -9,9 +9,6 @@ trigger:
 pool:
   vmImage: windows-2019
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 - task: AzureCLI@2
   inputs:
     azureSubscription: 'Visual Studio Enterprise Subscription – MPN(6343f0c0-472d-4266-af28-044c40155b85)'
@@ -19,7 +16,3 @@ steps:
     scriptLocation: 'inlineScript'
     inlineScript: 'Get-AzResourcegroup'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
